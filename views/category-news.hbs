@@ -1,0 +1,29 @@
+<div class="container">
+    <ul>
+    {{#each data}}
+    <li><a href="{{_id}}"><h2>{{title}}</h2></a><br><img src="{{image}}" alt=""></li>
+    {{/each}}
+</ul>
+</div>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .container {
+        width: 1300px;
+        margin: 0 auto
+    }
+    li img {
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+    }
+    li {
+        list-style-type: none;
+        margin-top: 20px;   
+    }
+    h2 {
+        margin: 0px;
+    }
+</style>
