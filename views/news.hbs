@@ -1,0 +1,35 @@
+<div class="container">
+    <ul class="all_news">
+        {{#each threeNews}}
+        <li class="news_item"><a href="/news/{{_id}}"><h2>{{title}}</h2></a></li>
+        {{/each}}
+    </ul>
+</div>
+
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .container {
+        width: 1300px;
+        margin: 0 auto
+    }
+    .news_item {
+        list-style-type: none;
+        margin-top: 20px;   
+    }
+    h2 {
+        margin: 0px;
+    }
+    .all_news li {
+      border: 1px solid orange; 
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .all_news li a {
+      color: #E9E9E9;
+    }
+    .all_news li a:hover {
+      color: #4EB1BA;
+    }
+</style>

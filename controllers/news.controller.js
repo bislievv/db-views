@@ -1,4 +1,5 @@
 const News = require("../models/News.model");
+const Comment = require("../models/Comment.model");
 
 module.exports.newsController = {
   postNews: async (req, res) => {
@@ -32,9 +33,11 @@ module.exports.newsController = {
   },
   certainNews: async (req, res) => {
     try {
+      const com = await Comment.find({ news: req.params.id }).lean();
       const only = await News.findById(req.params.id).lean();
-      res.render("home", {
+      res.render("singleNews", {
         only,
+        com,
       });
     } catch (err) {
       res.json(err);
@@ -43,8 +46,9 @@ module.exports.newsController = {
   getNews: async (req, res) => {
     try {
       const data = await News.find({}).lean();
-      res.render("home", {
-        data,
+      const threeNews = data.slice(data.length - 3);
+      res.render("news", {
+        threeNews,
       });
     } catch (err) {
       res.json(err);

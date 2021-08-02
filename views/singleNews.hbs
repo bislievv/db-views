@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="main_item">
+      <h2>{{only.title}}</h2>
+      <div class="item">
+        <img src="{{only.image}}" alt="">
+        <h3>{{only.text}}</h3>
+      </div>
+    </div>
+    <div>
+      <hr>
+      {{#each com}}
+      <h4>{{user}}</h4>
+      <p>{{text}}</p>
+      {{/each}}
+    </div>
+</div>
+
+<style>
+    *{
+      box-sizing: border-box;
+    }
+    .container {
+      width: 1300px;
+      margin: 0 auto;
+      padding-left: 40px;
+    }
+    img {
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    h2 {
+      margin-left: 0px;
+    }
+    .item {
+      display: flex;
+    }
+    h3 {
+      margin-top: 0px;
+    }
+    h4 {
+      margin-bottom: 0px;
+    }
+    p {
+      margin-top: 5px;
+    }
+    .main_item h3{
+      color: white;
+    }
+    p{
+      color: white;
+    }
+</style>
