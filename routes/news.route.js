@@ -9,5 +9,6 @@ router.patch("/news/:id", newsController.patchNews);
 router.get("/news/:id", newsController.certainNews);
 router.get("/news", newsController.getNews);
 router.get("/news/categories/:id", newsController.categoryNews);
+router.post("/news/:id", newsController.addImage);
 
 module.exports = router;
