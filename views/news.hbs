@@ -1,9 +1,13 @@
 <div class="container">
     <ul class="all_news">
-        {{#each threeNews}}
+        {{#each data}}
         <li class="news_item"><a href="/news/{{_id}}"><h2>{{title}}</h2></a></li>
         {{/each}}
     </ul>
+    <div class="link_cont">
+        <a class="link" href="/news?page=1&limit=5">1</a>
+        <a class="link" href="/news?page=2&limit=5">2</a>
+    </div>
 </div>
 
 <style>
@@ -13,6 +17,15 @@
     .container {
         width: 1300px;
         margin: 0 auto
+    }
+    .link {
+        color: white;
+        border: 2px solid orange;
+        padding: 4px;
+        border-radius: 5px;
+    }
+    .link_cont {
+        margin-left: 40px;
     }
     .news_item {
         list-style-type: none;

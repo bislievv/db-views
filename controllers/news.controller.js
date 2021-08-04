@@ -45,10 +45,15 @@ module.exports.newsController = {
   },
   getNews: async (req, res) => {
     try {
-      const data = await News.find({}).lean();
-      const threeNews = data.slice(data.length - 3);
+      const { page = 1, limit = 5 } = req.query;
+      const data = await News.find({})
+        .lean()
+        .limit(limit * 1)
+        .skip((page - 1) * limit);
+      // const threeNews = data.slice(data.length - 3);
       res.render("news", {
-        threeNews,
+        // threeNews,
+        data,
       });
     } catch (err) {
       res.json(err);
